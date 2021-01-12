@@ -8,6 +8,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @ORM\Table(name="`user`")
  */
 class User implements UserInterface
 {
@@ -50,7 +51,7 @@ class User implements UserInterface
     private $adresse;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=5)
      */
     private $code_postal;
 
@@ -58,21 +59,6 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $ville;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $telephone;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $adresse_livraison;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $adresse_mail;
 
     public function getId(): ?int
     {
@@ -188,12 +174,12 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getCodePostal(): ?int
+    public function getCodePostal(): ?string
     {
         return $this->code_postal;
     }
 
-    public function setCodePostal(int $code_postal): self
+    public function setCodePostal(string $code_postal): self
     {
         $this->code_postal = $code_postal;
 
@@ -208,42 +194,6 @@ class User implements UserInterface
     public function setVille(string $ville): self
     {
         $this->ville = $ville;
-
-        return $this;
-    }
-
-    public function getTelephone(): ?int
-    {
-        return $this->telephone;
-    }
-
-    public function setTelephone(int $telephone): self
-    {
-        $this->telephone = $telephone;
-
-        return $this;
-    }
-
-    public function getAdresseLivraison(): ?string
-    {
-        return $this->adresse_livraison;
-    }
-
-    public function setAdresseLivraison(string $adresse_livraison): self
-    {
-        $this->adresse_livraison = $adresse_livraison;
-
-        return $this;
-    }
-
-    public function getAdresseMail(): ?string
-    {
-        return $this->adresse_mail;
-    }
-
-    public function setAdresseMail(string $adresse_mail): self
-    {
-        $this->adresse_mail = $adresse_mail;
 
         return $this;
     }

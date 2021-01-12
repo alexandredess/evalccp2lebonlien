@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte - Bonbons Chocolat Biscuits{% endblock %}
+
+{% block content %}
+    <h1>Mon compte </h1>
+    Bienvenue {{app.user.prenom}} {{app.user.nom}} dans votre compte.<br/>
+    <br>
+    C'est dans cet espace que vous allez pouvoir gérer vos données personnelles.
+    <hr>
+    -<a href="{{path('account_password')}}"> Modifier Mot de passe</a><br/>
+    -Ajouter Mes adresses<br/>
+    -Mes commandes<br/>
+    <hr>
+{% endblock %}
+
