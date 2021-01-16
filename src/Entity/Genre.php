@@ -29,6 +29,11 @@ class Genre
      */
     private $category;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="genre")
+     */
+    private $product;
+
     public function __construct()
     {
         $this->category = new ArrayCollection();
@@ -77,6 +82,18 @@ class Genre
                 $category->setGenre(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): self
+    {
+        $this->product = $product;
 
         return $this;
     }
