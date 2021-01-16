@@ -49,7 +49,7 @@ class FemmeController extends AbstractController
         
            
 
-        return $this->render('femme/index.html.twig', [
+        return $this->render('femme/show.html.twig', [
             'controller_name' => 'FemmeController',
             'products'=>$products,
         ]);

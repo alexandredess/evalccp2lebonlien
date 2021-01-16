@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{products.name}} - ProductAMP{% endblock %}
+
+{% block content %}
+<br/>
+<div class="row">
+    <div class="col-md-4">
+        <img src="/uploads/{{products.illustration}}" alt="{{products.name}}" class="img-fluid" style="margin-left:80px" >
+    </div>
+    <div class="col-md-8">
+        <h1 class="text-center">{{products.name}}</h1>
+        <br/>
+        <br>
+        <p class="text-center">{{products.description}}
+        <br/>
+        <br>
+        <span class="item-price mbr-fonts-style display-4">{{products.price/100}}€</span>
+        <br/>
+        <br/>
+        <div class="item-box-footer text-center">
+            <a href="{{path('productfemme', {'slug':products.slug})}}" class="btn item-box-btn btn-black display-4" target="_blank"><span>Au Panier</span></a>
+        </div>
+    </div>
+        
+</div>
+
+{% endblock %}
