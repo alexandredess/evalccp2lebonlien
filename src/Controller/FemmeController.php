@@ -34,4 +34,24 @@ class FemmeController extends AbstractController
             'products'=>$products,
         ]);
     }
+
+    /**
+     * @Route("/article-femme/{slug}", name="productfemme")
+     */
+    public function show($slug)
+    
+    {
+        
+        $products = $this->entityManager->getRepository(Product::class)->findOneBySlug($slug);
+        if (!$products){
+            return $this->redirectToRoute('femme');
+        }
+        
+           
+
+        return $this->render('femme/index.html.twig', [
+            'controller_name' => 'FemmeController',
+            'products'=>$products,
+        ]);
+    }
 }
