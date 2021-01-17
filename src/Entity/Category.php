@@ -29,12 +29,6 @@ class Category
      */
     private $products;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Genre::class, inversedBy="category")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $genre;
-
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -88,18 +82,6 @@ class Category
                 $product->setCategory(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getGenre(): ?Genre
-    {
-        return $this->genre;
-    }
-
-    public function setGenre(?Genre $genre): self
-    {
-        $this->genre = $genre;
 
         return $this;
     }
