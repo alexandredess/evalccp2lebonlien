@@ -1,0 +1,13 @@
+easy_admin:
+  design:
+    form_theme:
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+
+  entities:
+    Cgu:
+      class: App\Entity\Cgu
+      label: Cgu
+      form: 
+        fields: 
+          - titre
+          - {property: 'description', type: 'fos_ckeditor'}
