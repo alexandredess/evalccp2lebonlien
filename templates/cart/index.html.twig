@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier - ProductAMP{% endblock %}
+
+{% block content %}
+<br/>
+<h1>Mon panier</h1>
+<br/>
+Voici l'ensemble des articles ajoutés au panier !
+<hr/>
+Mon Panier
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Produits</th>
+      <th scope="col">Quantite</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for products in cart %}
+      {{dump(products)}}
+    <tr>
+      <th scope="row">{{products.product.name}}</th>
+      <td></td>
+      <td></td>
+      <td>@mdo</td>
+    </tr>
+    {% endfor %}
+   </tbody> 
+</table>
+
+{% endblock %}
