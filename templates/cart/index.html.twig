@@ -26,9 +26,19 @@ Mon Panier
       
     <tr>
       <th scope="row">{{product.product.name}}</th>
-      <td>{{product.quantity}}</td>
+      <td>
+        <a href="{{path('decrease_to_cart',{'id' : product.product.id})}}">
+        <img src="{{asset('assets/img/minus-line.png')}}" style="width:4%" alt="supprimer mon produit">
+        </a>
+        {{product.quantity}}
+        <a href="{{path('add_to_cart',{'id' : product.product.id})}}">
+        <img src="{{asset('assets/img/add.png')}}" style="width:4%" alt="ajouter mon produit">
+        </a>
+        </td>
       <td>{{(product.product.price / 100)|number_format(2,',','.')}}€</td>
-      <td>{{(product.product.price * product.quantity / 100)|number_format(2,',','.')}}€</td>
+      <td>
+        {{(product.product.price * product.quantity / 100)|number_format(2,',','.')}}€
+        </td>
       <td>
         <a href="{{path('delete_to_cart',{'id' : product.product.id})}}">
           <img src="{{asset('assets/img/trash.png')}}" style="width:20%" alt="supprimer mon produit"</td>

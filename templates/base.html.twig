@@ -121,7 +121,11 @@ body{font-family: Manrope;}blockquote{border-color: #6d7a71;}div[submit-success]
                     <a class="nav-link link  text-black display-4" href="{{path('app_login')}}"aria-expanded="false">Connexion</a>
                     <a class="nav-link link  text-black display-4" href="{{path('register')}}" aria-expanded="false">Inscription</a>
                     {% endif %}
-                    <img src="{{asset('assets/img/shopping-cart.png')}}" alt="Mon Panier" class="cart-icon" style="width:1.5%">
+                    <a href="{{ path('cart') }}">
+                        <img src="{{asset('assets/img/shopping-cart.png')}}" alt="Mon Panier" style="width:2%">
+                    </a>
+                </div>
+                    
                 <!-- NAVBAR ITEMS END -->
                 <!-- SOCIAL ICON -->
                 <div class="menu-social-list">
