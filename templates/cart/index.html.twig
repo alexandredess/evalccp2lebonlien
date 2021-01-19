@@ -20,13 +20,13 @@ Mon Panier
     </tr>
   </thead>
   <tbody>
-      {% for products in cart %}
-      {{dump(products)}}
+      {% for product in cart %}
+      {{dump(product)}}
     <tr>
-      <th scope="row">{{products.product.name}}</th>
-      <td></td>
-      <td></td>
-      <td>@mdo</td>
+      <th scope="row">{{product.product.name}}</th>
+      <td>{{product.quantity}}</td>
+      <td>{{(product.product.price / 100)|number_format(2,',','.')}}€</td>
+      <td>{{(product.product.price * product.quantity / 100)|number_format(2,',','.')}}€</td>
     </tr>
     {% endfor %}
    </tbody> 
