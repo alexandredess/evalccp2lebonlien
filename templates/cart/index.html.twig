@@ -20,16 +20,23 @@ Mon Panier
     </tr>
   </thead>
   <tbody>
+    {% set total = null %}
       {% for product in cart %}
-      {{dump(product)}}
+      
     <tr>
       <th scope="row">{{product.product.name}}</th>
       <td>{{product.quantity}}</td>
       <td>{{(product.product.price / 100)|number_format(2,',','.')}}€</td>
       <td>{{(product.product.price * product.quantity / 100)|number_format(2,',','.')}}€</td>
     </tr>
+  {% set total = total + (product.product.price * product.quantity) %}
     {% endfor %}
    </tbody> 
 </table>
+<div class="text-right mb*5">
+  
+ <b>Total de Mon Panier : {{(total / 100)|number_format(2,',','.')}}€</b> <br/>
+  <a href="" class="btn">Valider la commande</a>
+</div>
 
 {% endblock %}
