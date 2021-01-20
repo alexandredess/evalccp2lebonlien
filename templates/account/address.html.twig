@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Adresses - Product Amp{% endblock %}
+
+{% block content %}
+    {{dump(app.user)}}
+    <br/>
+    <h1 class="text-center">Mes Adresses </h1>
+    <br/>
+   <p class="text-center"> C'est dans cet espace que vous allez pouvoir gérer toutes vos adresses.</p><br/>
+    <br/>
+    <div class="row">
+        <div class="col-md-3">
+            <a href="{{path('account')}}" class="btn item-box-btn btn-black display-4 btn-sm ">Retourner à mon compte</a>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <a href="{{path('account_address_add')}}" class="btn item-box-btn btn-black display-4 btn-sm ">Ajouter une adresse</a>
+            <br/>
+        </div>
+    </div>
+<hr>
+    {% if app.user.adresses | length == 0 %}
+        <p class="text-center">Vous n'avez pas encore ajouter de nouvelles adresses dans votre compte client. Si vous souhaitez en ajouter une, veuillez <a href="">cliquer ici</a></p>
+    {% else %}
+    Afficher des adresses
+    {% endif %}
+{% endblock %}
