@@ -103,13 +103,13 @@ body{font-family: Manrope;}blockquote{border-color: #6d7a71;}div[submit-success]
                         <a class="nav-link link text-black display-4" href="{{path('femme')}}">Femme</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="#">homme</a>
+                        <a class="nav-link link text-black display-4" href="#">Homme</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link link  dropdown-toggle text-black display-4" data-toggle="dropdown-submenu" aria-expanded="false">Accessoires</a>
+                        <a class="nav-link link  dropdown-toggle text-black display-4" data-toggle="dropdown-submenu" aria-expanded="true">Accessoires</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item text-black display-4" href="#">Lunettes</a>
-                            <a class="dropdown-item text-black display-4" href="#">Ceintures</a><a class="text-black dropdown-item display-4" href="#" aria-expanded="false">Accessories </a>
+                            <a class="dropdown-item text-black display-4" href="#">Ceintures</a><a class="text-black dropdown-item display-4" href="#" aria-expanded="true">Accessories </a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link link  text-black display-4" href="contact.html" aria-expanded="false">Contactez-nous</a></li>
@@ -121,8 +121,8 @@ body{font-family: Manrope;}blockquote{border-color: #6d7a71;}div[submit-success]
                     <a class="nav-link link  text-black display-4" href="{{path('app_login')}}"aria-expanded="false">Connexion</a>
                     <a class="nav-link link  text-black display-4" href="{{path('register')}}" aria-expanded="false">Inscription</a>
                     {% endif %}
-                    <a href="{{ path('cart') }}">
-                        <img src="{{asset('assets/img/shopping-cart.png')}}" alt="Mon Panier" style="width:2%">
+                    <a href="{{path('cart')}}">
+                        <img src="{{asset('assets/img/shopping-cart.png')}}" alt="Mon Panier" style="height:28px"/>
                     </a>
                 </div>
                     
