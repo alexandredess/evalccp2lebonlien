@@ -3,7 +3,7 @@
 {% block title %}Mes Adresses - Product Amp{% endblock %}
 
 {% block content %}
-    {{dump(app.user)}}
+    
     <br/>
     <h1 class="text-center">Mes Adresses </h1>
     <br/>
@@ -24,6 +24,14 @@
     {% if app.user.adresses | length == 0 %}
         <p class="text-center">Vous n'avez pas encore ajouter de nouvelles adresses dans votre compte client. Si vous souhaitez en ajouter une, veuillez <a href="">cliquer ici</a></p>
     {% else %}
-    Afficher des adresses
+        {% for adresse in app.user.adresses %}
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">{{adresse.name}}</h5>
+            <p class="card-text">{{adresse.adresse}}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        {% endfor %}
     {% endif %}
 {% endblock %}

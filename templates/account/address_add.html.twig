@@ -11,5 +11,37 @@
             <a href="{{path('account')}}" class="btn item-box-btn btn-black display-4 btn-sm ">Retourner à mon compte</a>
         
 <hr>
-    Formulaire
+    {{form_start(form)}}
+        <div class="row">
+            <div class="col-md-12">
+                 {{form_row(form.name)}}
+            </div>
+            <div class="col-md-6">
+               {{form_row(form.nom)}}
+            </div>
+            <div class="col-md-6">
+                {{form_row(form.prenom)}}
+            </div>
+            <div class="col-md-6">
+                {{form_row(form.societe)}}
+            </div>
+            <div class="col-md-6">
+                {{form_row(form.adresse)}}
+            </div>
+            <div class="col-md-6">
+                {{form_row(form.code_postal)}}
+            </div>
+            <div class="col-md-6">
+                {{form_row(form.ville)}}
+            </div>
+            <div class="col-md-6">
+                {{form_row(form.pays)}}
+            </div>
+            <div class="col-md-6">
+                {{form_row(form.telephone)}}
+            </div>
+
+
+        </div>
+    {{form_end(form)}}
 {% endblock %}

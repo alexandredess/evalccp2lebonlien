@@ -2,12 +2,25 @@
 
 namespace App\Controller;
 
+use App\Entity\Adresse;
+use App\Form\AdresseType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AccountAddressController extends AbstractController
 {
+
+    private $entityManager;
+
+    public function _construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager= $entityManager;
+    }
+
     /**
      * @Route("/compte/adresses", name="account_address")
      */
@@ -20,9 +33,24 @@ class AccountAddressController extends AbstractController
      /**
      * @Route("/compte/ajouter-une-adresse", name="account_address_add")
      */
-    public function add(): Response
+    public function add(Request $request): Response
     {
-        
-        return $this->render('account/address_add.html.twig');
+        $address = new Adresse();
+
+        $form = $this->createForm(AdresseType::class,$address);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $address->setUser($this->getUser());
+
+            $doctrine = $this->getDoctrine()->getManager();
+            $doctrine ->persist($address);
+            $doctrine ->flush();
+            return $this->redirectToRoute('account_address');
+        }
+
+        return $this->render('account/address_add.html.twig',[
+            'form'=>$form->createView()]);
     }
 }
