@@ -24,14 +24,21 @@
     {% if app.user.adresses | length == 0 %}
         <p class="text-center">Vous n'avez pas encore ajouter de nouvelles adresses dans votre compte client. Si vous souhaitez en ajouter une, veuillez <a href="">cliquer ici</a></p>
     {% else %}
+        <div class="row">
         {% for adresse in app.user.adresses %}
-            <div class="card" style="width: 18rem;">
-            <div class="card-body">
-            <h5 class="card-title">{{adresse.name}}</h5>
-            <p class="card-text">{{adresse.adresse}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{adresse.name}}</h5>
+                        <br/>
+                        <p class="card-text">{{adresse.adresse}}</p>
+                        {{adresse.codepostal}} - {{adresse.ville}} - {{adresse.pays}}
+                        </p>
+                        <a href="{{path('account_address_edit',{'id':adresse.id})}}">Modifier</a> | <a href="#">Supprimer</a>
+                    </div>
+                </div>
             </div>
         {% endfor %}
+    </div>
     {% endif %}
 {% endblock %}
