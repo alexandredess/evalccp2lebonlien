@@ -71,7 +71,7 @@ class AdresseType extends AbstractType
                 ]
             ])
             ->add('submit',SubmitType::class,[
-                'label'=>'Ajouter mon Adresse'
+                'label'=>'Valider'
             ])
         ;
     }

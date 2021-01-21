@@ -11,7 +11,7 @@
     <br/>
     <div class="row">
         <div class="col-md-3">
-            <a href="{{path('account')}}" class="btn item-box-btn btn-black display-4 btn-sm ">Retourner à mon compte</a>
+            <a href="{{path('account_address')}}" class="btn item-box-btn btn-black display-4 btn-sm ">Retour</a>
         </div>
         <div class="col-md-3"></div>
         <div class="col-md-3"></div>
@@ -34,7 +34,7 @@
                         <p class="card-text">{{adresse.adresse}}</p>
                         {{adresse.codepostal}} - {{adresse.ville}} - {{adresse.pays}}
                         </p>
-                        <a href="{{path('account_address_edit',{'id':adresse.id})}}">Modifier</a> | <a href="#">Supprimer</a>
+                        <a href="{{path('account_address_edit',{'id':adresse.id})}}">Modifier</a> | <a href="{{path('account_address_delete',{'id':adresse.id})}}">Supprimer</a>
                     </div>
                 </div>
             </div>
