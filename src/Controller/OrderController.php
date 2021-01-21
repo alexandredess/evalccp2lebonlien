@@ -14,7 +14,9 @@ class OrderController extends AbstractController
      */
     public function index()
     {
-        $form = $this->createForm(OrderType::class);
+        $form = $this->createForm(OrderType::class,null,[
+            'user'=>$this->getUser()
+        ]);
         return $this->render('order/index.html.twig',[
             'form'=>$form->createView()
         ]);

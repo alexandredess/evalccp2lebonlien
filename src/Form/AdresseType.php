@@ -36,6 +36,7 @@ class AdresseType extends AbstractType
             ])
             ->add('societe',TextType::class,[
                 'label'=>'Quel nom de votre société ?',
+                'required'=>false,
                 'attr'=>[
                     'placeholder'=>'(faclutatif) Veuillez entrer le nom de votre Société'
                 ]
