@@ -73,6 +73,11 @@ class Adresse
         return $this->id;
     }
 
+    public function __toString()
+    {
+        return $this->getNom();
+    }
+
     public function getUser(): ?User
     {
         return $this->user;
