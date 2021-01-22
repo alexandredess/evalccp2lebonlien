@@ -14,6 +14,25 @@
         </div>
         <div class="col-md-6">
             <b>Récapitulatif de ma commande</b><br/>
-            <b>bouton pour payer</b>
+            <br/>
+            
+            {% for product in cart %}
+                <div class="row">
+                    <div class="col">
+                        {{product.product.name}}
+                    </div>
+                    <div class="col">
+                        {{product.quantity}}
+                    </div>
+                    <div  class="col">
+                        {{(product.product.price / 100)|number_format(2,',','.')}}€
+                    </div>
+                    <div class="col">
+                        {{(product.product.price * product.quantity / 100)|number_format(2,',','.')}}€
+                    </div>
+                </div>
+                        
+                 
+            {% endfor %}
         </div>        
 {% endblock %}
