@@ -12,11 +12,12 @@
             {% endset %}
             {{ formhtml|replace({'[br]' : '</br>'})|raw}}
         </div>
+        <br/>
         <div class="col-md-6">
             <b>Récapitulatif de ma commande</b><br/>
             <br/>
-            
-            {% for product in cart %}
+            <div class="order-summary">
+                {% for product in cart %}
                 <div class="row">
                     <div class="col">
                         {{product.product.name}}
@@ -30,9 +31,8 @@
                     <div class="col">
                         {{(product.product.price * product.quantity / 100)|number_format(2,',','.')}}€
                     </div>
-                </div>
-                        
-                 
+                </div> 
             {% endfor %}
+            </div>
         </div>        
 {% endblock %}

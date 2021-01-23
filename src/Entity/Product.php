@@ -54,6 +54,11 @@ class Product
      */
     private $genre;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isbest;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -139,6 +144,18 @@ class Product
     public function setGenre(?Genre $genre): self
     {
         $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getIsbest(): ?bool
+    {
+        return $this->isbest;
+    }
+
+    public function setIsbest(bool $isbest): self
+    {
+        $this->isbest = $isbest;
 
         return $this;
     }
