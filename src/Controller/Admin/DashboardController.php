@@ -9,6 +9,7 @@ use App\Entity\Cgu;
 use App\Entity\Cgv;
 use App\Entity\Contact;
 use App\Entity\Genre;
+use App\Entity\Header;
 use App\Entity\Product;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -41,6 +42,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Genre', 'fas fa-list', Genre::class);
         yield MenuItem::linkToCrud('Transporteur', 'fas fa-truck',Carrier::class);
         yield MenuItem::linkToCrud('Page accueil', 'fas fa-pager', Accueil::class);
+        yield MenuItem::linkToCrud('header', 'fas fa-file-image', Header::class);
         yield MenuItem::linkToCrud('Produits', 'fas fa-tag', Product::class);
         yield MenuItem::linkToCrud('Contact', 'fas fa-file-contract', Contact::class);
         yield MenuItem::linkToCrud('Cgu', 'fas fa-list', Cgu::class);
