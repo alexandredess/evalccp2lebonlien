@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles pour femme - ProductAMP{% endblock %}
+
+{% block content %}
+<br/>
+<h1 class="text-center">Femme</h1>
+<br/>
+
+        
+            
+
+    <div class="row">
+        
+    {% for product in products %}
+                    <!--Item-->
+                    
+                    <div class="col-md-3">
+                    
+                        
+                            <h4 class="item-title mbr-fonts-style mbr-bold text-success mbr-pb-1 display-4">{{product.name}}</h4>
+                            <span class="item-price mbr-fonts-style display-4">{{product.price/100}}€</span>
+                            
+                            
+                    
+                        <div class="img-fluid" >
+                            <amp-img src="/uploads/{{product.illustration}}" layout="responsive" width="598.404255319149" height="500" alt="{{product.illustration}}" class="placeholder-loader">
+                                
+                                
+                                </div>
+                                <div class="item-box-footer text-center">
+                                    <a href="{{path('producthomme', {'slug':product.slug})}}" class="btn item-box-btn btn-black display-4" target="_blank"><span>Voir produit</span></a>
+                                </div>
+                            </amp-img>
+                        
+                    </div>
+                     {% endfor %}
+    </div>
+              
+
+{% endblock %}

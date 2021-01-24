@@ -11,18 +11,26 @@
     C'est dans cet espace que vous allez pouvoir gérer vos données personnelles.
     <hr>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <a href="{{path('account_password')}}"> Modifier Mot de passe</a><br/>
         </div>
     <br/>
     
-        <div class="col-md-4">
+        <div class="col-md-3">
             -Ajouter Mes adresses<br/>
         </div>
     <br/>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <a href="{{path('account_address')}}">-Modifier Mes adresses</a><br/>
         </div>
+    <br/>
+     {% if is_granted('ROLE_ADMIN') %}
+        <div class="col-md-3">
+            <a href="/admin"> se connecter au backoffice? (admin)</a><br/>
+        </div>
+    {% endif %}
+    
+
     </div>
     <br/>
     <hr>
