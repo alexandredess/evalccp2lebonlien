@@ -90,7 +90,7 @@ class AccountAddressController extends AbstractController
      */
     public function delete($id)
         {
-            $address = $this->entityManager->getRepository(Adresse::class)->findOneBy($id);
+            $address = $this->entityManager->getRepository(Adresse::class)->findOneById($id);
 
             if ($address && $address->getUser() == $this->getUser()){
         

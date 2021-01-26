@@ -3,19 +3,26 @@
 {% block title %}Articles pour femme - ProductAMP{% endblock %}
 
 {% block content %}
+
 <br/>
-<h1 class="text-center">Femme</h1>
+<h2 class="item-title mbr-fonts-style mbr-bold text-success mbr-pb-1 display-2 text-center">Femme</h2>
 <br/>
 
         
             
 
-    <div class="row">
-        
+<div class="row">
+    <div class="col-md-3">
+       <h4 class="item-title mbr-fonts-style mbr-bold text-success mbr-pb-1 display-4 text-center">Filtrer</h4>
+       {{form(form)}}
+    </div>
+    <div class="col-md-9">
+        <div class="row">
     {% for product in products %}
                     <!--Item-->
+
                     
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                     
                         
                             <h4 class="item-title mbr-fonts-style mbr-bold text-success mbr-pb-1 display-4">{{product.name}}</h4>
@@ -39,6 +46,8 @@
                        
     {% endfor %}
     </div>
-              
+    </div>
+    </div>
+</div>     
 
 {% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\classe\Search;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -18,6 +19,7 @@ class ProductRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Product::class);
     }
+
 
     // /**
     //  * @return Product[] Returns an array of Product objects
