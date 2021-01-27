@@ -2,15 +2,12 @@
 
 namespace App\Controller;
 
-use App\classe\Search;
 use App\Entity\Product;
-use App\Form\SearchType;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 
 class FemmeController extends AbstractController
 {
@@ -25,25 +22,16 @@ class FemmeController extends AbstractController
     /**
      * @Route("/femme", name="femme")
      */
-    public function index(Request $request): Response
+    public function index(): Response
     {
-        $search = new Search();
-        $form = $this->createForm(SearchType::class, $search);
 
         $products = $this->entityManager->getRepository(Product::class)->findAll();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()){
-            
-        }
         
            
 
         return $this->render('femme/index.html.twig', [
             'controller_name' => 'FemmeController',
             'products'=>$products,
-            'form'=>$form->createView()
         ]);
     }
 
